@@ -15,19 +15,20 @@ def read_input():
         text_input = text_input.split("\n")
         pattern = text_input[0]
         text = text_input[1]
+        pattern = pattern.strip()
+        text = text.strip()
+    return (pattern, text)
 
-    return (pattern.strip(), text.strip())
 
-
-def print_occurrences(output):
-    print(' '.join(map(str, output)))
+def print_occurrences(occs):
+    print(' '.join(map(str, occs)))
 
 
 def get_occurrences(pattern, text):
     ind = []
 
     for i in range(len(text)):
-        if text[i] == pattern and len(pattern)+i <= len(text):
+        if text[i] == pattern[0] and len(pattern)+i <= len(text):
             occurs = True
             for j in range(len(pattern)):
                 if text[i+j] != pattern[j]:
@@ -39,5 +40,5 @@ def get_occurrences(pattern, text):
 
 if __name__ == '__main__':
     pattern, text = read_input()
-    output = get_occurrences(pattern, text)
-    print_occurrences(output)
+    occs = get_occurrences(pattern, text)
+    print_occurrences(occs)
