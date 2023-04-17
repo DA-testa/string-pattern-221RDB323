@@ -1,32 +1,43 @@
 # python3
+# Danila Sinicins, 17. grupa, 221RDB323
+
 
 def read_input():
-    # this function needs to aquire input both from keyboard and file
-    # as before, use capital i (input from keyboard) and capital f (input from file) to choose which input type will follow
-    
-    
-    # after input type choice
-    # read two lines 
-    # first line is pattern 
-    # second line is text in which to look for pattern 
-    
-    # return both lines in one return
-    
-    # this is the sample return, notice the rstrip function
-    return (input().rstrip(), input().rstrip())
+    text_input = input("Input: ")
+    pattern = ""
+    text = ""
+    if "I" in input:
+        pattern = input("Pattern: ")
+        text = input("Text: ")
+    elif "F" in text_input:
+        f = open ("./tests/06","r")
+        text_input = f.read()
+        input_array = text_input.split("\n")
+        pattern = input_array[0]
+        text = input_array[1]
+
+    return (pattern.strip(), text.strip())
+
 
 def print_occurrences(output):
-    # this function should control output, it doesn't need any return
     print(' '.join(map(str, output)))
 
+
 def get_occurrences(pattern, text):
-    # this function should find the occurances using Rabin Karp alghoritm 
+    ind = []
 
-    # and return an iterable variable
-    return [0]
+    for i in range(text):
+        if text[i] == pattern and len(pattern)+i <= len(text):
+            occurs = True
+            for j in range(len(pattern)):
+                if text[i+j] != pattern[j]
+                    occurs = False
+            if occurs:
+                ind.append(i)
 
+    return ind
 
-# this part launches the functions
 if __name__ == '__main__':
-    print_occurrences(get_occurrences(*read_input()))
-
+    patern, text = read_input()
+    output = get_occurrences(patern, text)
+    print_occurrences(output)
