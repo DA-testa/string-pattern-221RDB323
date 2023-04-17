@@ -39,5 +39,5 @@ def get_occurrences(pattern, text):
 
 if __name__ == '__main__':
     pattern, text = read_input()
-    output = get_occurrences(patern, text)
+    output = get_occurrences(pattern, text)
     print_occurrences(output)
