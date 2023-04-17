@@ -15,8 +15,8 @@ def read_input():
         text_input = text_input.split("\n")
         pattern = text_input[0]
         text = text_input[1]
-        pattern = pattern.strip()
-        text = text.strip()
+    pattern = pattern.strip()
+    text = text.strip()
     return (pattern, text)
 
 
@@ -35,7 +35,6 @@ def get_occurrences(pattern, text):
                     occurs = False
             if occurs:
                 ind.append(i)
-
     return ind
 
 if __name__ == '__main__':
