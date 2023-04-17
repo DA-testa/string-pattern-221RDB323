@@ -26,7 +26,7 @@ def print_occurrences(output):
 def get_occurrences(pattern, text):
     ind = []
 
-    for i in range(text):
+    for i in range(len(text)):
         if text[i] == pattern and len(pattern)+i <= len(text):
             occurs = True
             for j in range(len(pattern)):
