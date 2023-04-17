@@ -3,18 +3,18 @@
 
 
 def read_input():
-    text_input = input("Input: ")
+    text_input = input()
     pattern = ""
     text = ""
     if "I" in input:
-        pattern = input("Pattern: ")
-        text = input("Text: ")
+        pattern = input()
+        text = input()
     elif "F" in text_input:
         f = open ("./tests/06","r")
         text_input = f.read()
-        input_array = text_input.split("\n")
-        pattern = input_array[0]
-        text = input_array[1]
+        text_input = text_input.split("\n")
+        pattern = text_input[0]
+        text = text_input[1]
 
     return (pattern.strip(), text.strip())
 
@@ -38,6 +38,6 @@ def get_occurrences(pattern, text):
     return ind
 
 if __name__ == '__main__':
-    patern, text = read_input()
+    pattern, text = read_input()
     output = get_occurrences(patern, text)
     print_occurrences(output)
