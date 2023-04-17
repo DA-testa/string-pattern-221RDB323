@@ -6,7 +6,7 @@ def read_input():
     text_input = input()
     pattern = ""
     text = ""
-    if "I" in input:
+    if "I" in text_input:
         pattern = input()
         text = input()
     elif "F" in text_input:
