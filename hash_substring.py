@@ -30,7 +30,7 @@ def get_occurrences(pattern, text):
         if text[i] == pattern and len(pattern)+i <= len(text):
             occurs = True
             for j in range(len(pattern)):
-                if text[i+j] != pattern[j]
+                if text[i+j] != pattern[j]:
                     occurs = False
             if occurs:
                 ind.append(i)
